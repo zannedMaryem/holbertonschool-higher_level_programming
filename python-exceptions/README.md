@@ -30,19 +30,3 @@ finally:
 def set_age(age):
  if age < 0:
   raise ValueError("age must be >= 0")
-```
-
-## Exercises
-
-- Implement a function that reads integers from a file and handles malformed lines gracefully.
-- Write code that opens a network/socket resource and ensures it is always closed, even on errors.
-- Create a small CLI that demonstrates raising and catching custom exceptions.
-
-## Suggested Next Steps
-
-- Study common built-in exceptions in the Python docs.
-- Practice converting try/finally patterns into context managers.
-- Submit a PR with solutions to the exercises.
-
----
-Happy learning! If you want, I can add example files or exercises with tests next.
