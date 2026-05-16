@@ -1,4 +1,4 @@
->>> add_integer = __import__('0-add_integer').add_integer
+>>> add_integer = __import__('add_integer_3').add_integer
 
 >>> add_integer(1, 2)
 3
@@ -18,3 +18,6 @@ TypeError: a must be an integer
 Traceback (most recent call last):
 ...
 TypeError: b must be an integer
+
+>>> add_integer(1e100, 1e100)
+20000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
