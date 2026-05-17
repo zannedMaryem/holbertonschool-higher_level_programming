@@ -5,6 +5,8 @@ of a matrix by a number ensuring type safety by raising a
 TypeError when inputs are not integers or floats.
 """
 def matrix_divided(matrix, div):
+
+
     """
     Divides all elements of a matrix by div.
 
@@ -22,7 +24,8 @@ def matrix_divided(matrix, div):
         ZeroDivisionError: If div is equal to 0.
     """
     if not isinstance(matrix, list) or matrix == []:
-        raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+        raise TypeError("matrix must be a matrix (list of lists)" \
+        " of integers/floats")
 
     if not isinstance(div, (int, float)) or isinstance(div, bool):
         raise TypeError("div must be a number")
@@ -34,7 +37,8 @@ def matrix_divided(matrix, div):
 
     for row in matrix:
         if not isinstance(row, list):
-            raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+            raise TypeError("matrix must be a matrix "
+            "(list of lists) of integers/floats")
         if row_length is None:
             row_length = len(row)
         elif len(row) != row_length:
@@ -43,7 +47,8 @@ def matrix_divided(matrix, div):
         new_row = []
         for value in row:
             if not isinstance(value, (int, float)) or isinstance(value, bool):
-                raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+                raise TypeError("matrix must be a matrix "
+                "(list of lists) of integers/floats")
             new_row.append(round(value / div, 2))
         new_matrix.append(new_row)
 
