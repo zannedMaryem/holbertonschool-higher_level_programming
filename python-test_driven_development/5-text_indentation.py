@@ -20,12 +20,16 @@ def text_indentation(text):
 
     buffer = ""
 
-    for char in text:
+    for i, char in enumerate(text):
         buffer += char
 
         if char in ".?:":
-            print(buffer.strip())
-            print()
+            print(buffer.strip(), end="")
+
+            # only print 2 new lines if there's more text after
+            if i != len(text) - 1:
+                print("\n")
+
             buffer = ""
 
     if buffer.strip():
