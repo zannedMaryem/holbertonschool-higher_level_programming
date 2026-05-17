@@ -29,4 +29,4 @@ def text_indentation(text):
     lines = [line.strip() for line in result.split("\n")]
     for line in lines:
         if line:  # avoid printing empty lines caused by split
-            print(line)
+            print(line, end="")
