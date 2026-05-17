@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """
 This module defines a function that prints text with indentation rules.
-
 """
 
 
@@ -19,14 +18,14 @@ def text_indentation(text):
     if not isinstance(text, str):
         raise TypeError("text must be a string")
 
-    result = ""
+    buffer = ""
     for char in text:
-        result += char
+        buffer += char
         if char in ".?:":
-            result += "\n\n"
+            # print the current buffer (stripped of leading/trailing spaces)
+            print(buffer.strip(), end="\n\n")
+            buffer = ""  # reset buffer
 
-    # Split into lines, strip spaces at start/end of each line
-    lines = [line.strip() for line in result.split("\n")]
-    for line in lines:
-        if line:  # avoid printing empty lines caused by split
-            print(line, end="")
+    # print any leftover text (if it doesn't end with . ? :)
+    if buffer.strip():
+        print(buffer.strip(), end="")
