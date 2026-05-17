@@ -1,0 +1,24 @@
+>>> text_indentation("Hello. How are you? I am fine: thanks.")
+Hello.
+
+How are you?
+
+I am fine:
+
+thanks.
+
+>>> text_indentation("Python is fun.")
+Python is fun.
+
+>>> text_indentation("No punctuation here")
+No punctuation here
+
+>>> text_indentation(123)
+Traceback (most recent call last):
+    ...
+TypeError: text must be a string
+
+>>> text_indentation()
+Traceback (most recent call last):
+    ...
+TypeError: text_indentation() missing 1 required positional argument: 'text'
