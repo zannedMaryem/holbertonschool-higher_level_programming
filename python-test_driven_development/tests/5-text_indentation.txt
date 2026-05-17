@@ -9,12 +9,8 @@ I am fine:
 
 thanks.
 
-
-
 >>> text_indentation("Python is fun.")
 Python is fun.
-
-
 
 >>> text_indentation("No punctuation here")
 No punctuation here
