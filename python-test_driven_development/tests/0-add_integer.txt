@@ -1,24 +1,33 @@
->>> add_integer = __import__('0-add_integer').add_integer
+    Examples:
+        >>> add_integer(1, 2)
+        3
 
->>> add_integer(1, 2)
-3
+        >>> add_integer(100)
+        198
 
->>> add_integer(100)
-198
+        >>> add_integer(100.5, -2)
+        98
 
->>> add_integer(100.5, -2)
-98
+        >>> add_integer(-10, 5)
+        -5
 
->>> add_integer("10", 2)
-Traceback (most recent call last):
-...
-TypeError: a must be an integer
+        >>> add_integer(0, 0)
+        0
 
->>> add_integer(10, "2")
-Traceback (most recent call last):
-...
-TypeError: b must be an integer
+        >>> add_integer("10", 2)
+        Traceback (most recent call last):
+        ...
+        TypeError: a must be an integer
 
->>> add_integer(1e100, 1e100)
-20000000000000000...
+        >>> add_integer(10, "2")
+        Traceback (most recent call last):
+        ...
+        TypeError: b must be an integer
 
+        >>> add_integer(None, 5)
+        Traceback (most recent call last):
+        ...
+        TypeError: a must be an integer
+
+        >>> add_integer(1e100, 1e100)
+        20000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
