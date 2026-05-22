@@ -19,7 +19,7 @@ class Rectangle():
             raise TypeError("height must be an integer")
         if height < 0:
             raise ValueError("height must be >= 0")
-        number_of_instances += 1
+        self.number_of_instances += 1
 
     @property
     def width(self):
@@ -74,5 +74,5 @@ class Rectangle():
 
     def __del__(self):
         """Print a message when a Rectangle is deleted."""
-        number_of_instances -= 1
+        self.number_of_instances -= 1
         print("Bye rectangle...")
