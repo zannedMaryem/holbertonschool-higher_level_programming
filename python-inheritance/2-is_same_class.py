@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" This module is to check whether on object is 
+""" This module is to check whether on object is
 an instance of a class"""
 
 
