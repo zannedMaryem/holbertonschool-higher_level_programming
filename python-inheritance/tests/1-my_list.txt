@@ -26,3 +26,6 @@
 >>> my_list = MyList("akc")
 >>> my_list.print_sorted()
 ['a', 'c', 'k']
+
+>>> str(MyList([1, 2, 3]))
+'[1, 2, 3]'
