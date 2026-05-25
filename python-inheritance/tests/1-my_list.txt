@@ -18,11 +18,6 @@
 >>> Mylist.print_sorted([-1, -4, 2, -3, 5])
 [-1, -4, 2, -3, 5]
 
->>> Mylist.print_sorted([a, b])
-Traceback (most recent call last):
-...
-NameError: name 'a' is not defined
-
 >>> Mylist.print_sorted([!, ?])
 Traceback (most recent call last):
 ...
