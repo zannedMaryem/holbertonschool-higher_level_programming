@@ -4,6 +4,6 @@ an instance of a class"""
 
 
 def is_same_class(obj, a_class):
-    """" A function that tests if the object is
+    """ A function that tests if the object is
      exactly an instance of the specified class"""
-    return issubclass(obj, a_class)
+    return type(obj) is a_class
