@@ -27,5 +27,12 @@
 >>> my_list.print_sorted()
 ['a', 'c', 'k']
 
+>>> my_list = MyList([1, 2, 3])
+>>> my_list.append(0)
+>>> my_list.print_sorted()
+[0, 1, 2, 3]
+>>> my_list
+[1, 2, 3, 0]
+
 >>> str(MyList([1, 2, 3]))
 '[1, 2, 3]'
