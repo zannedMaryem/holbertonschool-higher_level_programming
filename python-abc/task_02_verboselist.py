@@ -31,10 +31,10 @@ class VerboseList(list):
         else:
             raise ValueError(f"[{self[index]}] not found in list")
 
-
-vl = VerboseList([1, 2, 3])
-vl.append(4)
-vl.extend([5, 6])
-vl.remove(2)
-vl.pop()
-vl.pop(0)
+if __name__ == "__main__":
+    vl = VerboseList([1, 2, 3])
+    vl.append(4)
+    vl.extend([5, 6])
+    vl.remove(2)
+    vl.pop()
+    vl.pop(0)
