@@ -24,12 +24,15 @@ class VerboseList(list):
             raise ValueError(f"[{value}] not found in list")
 
     def pop(self, index=-1):
-        """pops item form list and annouces it"""
-        if self[index] in self:
-            print(f"Popped [{self[index]}] from the list.")
-            super().pop(index)
-        else:
-            raise ValueError(f"[{self[index]}] not found in list")
+        """Pop item from list and announce it; return the popped item."""
+        try:
+            item = self[index]
+        except IndexError:
+            if len(self) == 0:
+                raise IndexError("pop from empty list")
+            raise IndexError("pop index out of range")
+        print(f"Popped [{item}] from the list.")
+        return super().pop(index)
 
 if __name__ == "__main__":
     vl = VerboseList([1, 2, 3])
