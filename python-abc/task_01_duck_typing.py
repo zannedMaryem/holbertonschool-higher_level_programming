@@ -25,10 +25,6 @@ class Circle(Shape):
 
     def __init__(self, radius):
         """The constructor method for a circle"""
-        if not isinstance(radius, (int, float)):
-            raise TypeError("radius must be a number")
-        if radius <= 0:
-            raise ValueError("radius must be > 0")
         self.radius = radius
 
     def area(self):
@@ -45,12 +41,6 @@ class Rectangle(Shape):
 
     def __init__(self, width, height):
         """The constructor method for a rectangle"""
-        if not isinstance(width, (int, float)):
-            raise TypeError("width must be a number")
-        if not isinstance(height, (int, float)):
-            raise TypeError("height must be a number")
-        if width <= 0 or height <= 0:
-            raise ValueError("width and height must be > 0")
         self.width = width
         self.height = height
 
