@@ -46,4 +46,3 @@ if __name__ == "__main__":
 	ff.habitat()
 	# Show method resolution order
 	print(FlyingFish.mro())
-
