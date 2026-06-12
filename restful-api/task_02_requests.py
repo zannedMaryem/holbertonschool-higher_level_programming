@@ -1,14 +1,12 @@
 #!/usr/bin/python3
 
 import requests
-import json
 import csv
 
 def fetch_and_print_posts():
     """fetches and prints all post from JSONPlaceholder"""
     try:
         response = requests.get("https://jsonplaceholder.typicode.com/posts")
-        response.raise_for_status()
         print("Status Code:",response.status_code)
         data = response.json()
         if not isinstance(data, list):
@@ -28,7 +26,6 @@ def fetch_and_print_posts():
 def fetch_and_save_posts():
     try:
         response = requests.get("https://jsonplaceholder.typicode.com/posts")
-        response.raise_for_status()
         posts = response.json()
         # Structure data: only keep id, title, body
         structured_posts = [
