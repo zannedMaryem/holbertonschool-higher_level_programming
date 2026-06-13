@@ -47,16 +47,6 @@ class CustomHandler(BaseHTTPRequestHandler):
                     self.wfile.write(body)
 
 
-def run(host="localhost", port=8000):
-        server_address = (host, port)
-        httpd = HTTPServer(server_address, CustomHandler)
-        print(f"Server running at http://{host}:{port}")
-        try:
-                httpd.serve_forever()
-        except KeyboardInterrupt:
-                print("\nShutting down server.")
-                httpd.server_close()
+httpd = HTTPServer(("localhost", 8000), CustomHandler)
+httpd.serve_forever()
 
-
-if __name__ == "__main__":
-        run()
