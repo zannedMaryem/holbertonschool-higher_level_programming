@@ -7,43 +7,44 @@ class CustomHandler(BaseHTTPRequestHandler):
         def do_GET(self):
                 # Root path: simple text response
                 if self.path == "/" or self.path == "":
-                        body = "Hello, this is a simple API!".encode("utf-8")
-                        self.send_response(200)
-                        self.send_header("Content-Type", "text/plain")
-                        self.send_header("Content-Length", str(len(body)))
-                        self.end_headers()
-                        self.wfile.write(body)
-                        return
+                    body = "Hello, this is a simple API!".encode("utf-8")
+                    self.send_response(200)
+                    self.send_header("Content-Type", "text/plain")
+                    self.send_header("Content-Length", str(len(body)))
+                    self.end_headers()
+                    self.wfile.write(body)
+                    return
 
                 # /data: return JSON dataset
-                if self.path == "/data":
-                        data = {"name": "John", "age": 30, "city": "New York"}
-                        body = json.dumps(data).encode("utf-8")
-                        self.send_response(200)
-                        self.send_header("Content-Type", "application/json")
-                        self.send_header("Content-Length", str(len(body)))
-                        self.end_headers()
-                        self.wfile.write(body)
-                        return
+                elif self.path == "/data":
+                    data = {"name": "John", "age": 30, "city": "New York"}
+                    body = json.dumps(data).encode("utf-8")
+                    self.send_response(200)
+                    self.send_header("Content-Type", "application/json")
+                    self.send_header("Content-Length", str(len(body)))
+                    self.end_headers()
+                    self.wfile.write(body)
+                    return
 
                 # /status: return OK
-                if self.path == "/status":
-                        body = "OK".encode("utf-8")
-                        self.send_response(200)
-                        self.send_header("Content-Type", "text/plain")
-                        self.send_header("Content-Length", str(len(body)))
-                        self.end_headers()
-                        self.wfile.write(body)
-                        return
+                elif self.path == "/status":
+                    body = "OK".encode("utf-8")
+                    self.send_response(200)
+                    self.send_header("Content-Type", "text/plain")
+                    self.send_header("Content-Length", str(len(body)))
+                    self.end_headers()
+                    self.wfile.write(body)
+                    return
 
                 # Unknown endpoint: 404
-                msg = "404 Not Found: The requested resource was not found on this server."
-                body = msg.encode("utf-8")
-                self.send_response(404)
-                self.send_header("Content-Type", "text/plain")
-                self.send_header("Content-Length", str(len(body)))
-                self.end_headers()
-                self.wfile.write(body)
+                else:
+                    msg = "404 Not Found: The requested resource was not found on this server."
+                    body = msg.encode("utf-8")
+                    self.send_response(404)
+                    self.send_header("Content-Type", "text/plain")
+                    self.send_header("Content-Length", str(len(body)))
+                    self.end_headers()
+                    self.wfile.write(body)
 
         # Silence default logging to keep output clean
         def log_message(self, format, *args):
