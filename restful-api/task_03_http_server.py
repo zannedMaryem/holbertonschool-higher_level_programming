@@ -38,17 +38,13 @@ class CustomHandler(BaseHTTPRequestHandler):
 
                 # Unknown endpoint: 404
                 else:
-                    msg = "404 Not Found: The requested resource was not found on this server."
+                    msg = "404 Not Found: Endpoint not found."
                     body = msg.encode("utf-8")
                     self.send_response(404)
                     self.send_header("Content-Type", "text/plain")
                     self.send_header("Content-Length", str(len(body)))
                     self.end_headers()
                     self.wfile.write(body)
-
-        # Silence default logging to keep output clean
-        def log_message(self, format, *args):
-                return
 
 
 def run(host="localhost", port=8000):
