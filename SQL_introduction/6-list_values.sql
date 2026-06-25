@@ -1,2 +1,2 @@
--- Describe table
-DESCRIBE first_table;
+-- List all records in first_table
+SELECT * FROM first_table;
