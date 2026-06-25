@@ -32,6 +32,12 @@ Learn the fundamentals of SQL and MySQL commands for managing databases, creatin
 CREATE DATABASE school;
 ```
 
+- Always check if the database exists before creating it:
+
+```sql
+CREATE DATABASE IF NOT EXISTS school;
+```
+
 ### Use a database
 
 ```sql
@@ -88,6 +94,12 @@ DROP TABLE students;
 
 ```sql
 DROP DATABASE school;
+```
+
+- Drop a database if exixts
+
+```sql
+DROP DATABASE IF EXISTS school;
 ```
 
 ### Alter a table
