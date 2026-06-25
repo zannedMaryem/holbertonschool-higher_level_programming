@@ -1,5 +1,5 @@
 -- Create Table
-CREATE TABLE first_table IF NOT EXISTS(
+CREATE TABLE IF NOT EXISTS first_table(
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(256)
 );
