@@ -7,24 +7,23 @@ import MySQLdb
 import sys
 
 if __name__ == "__main__":
-    # Arguments: mysql username, mysql password, database name
+    # Get MySQL credentials and database name from arguments
     username = sys.argv[1]
     password = sys.argv[2]
     db_name = sys.argv[3]
 
-    # Connect to MySQL server on localhost at port 3306
+    # Connect to MySQL server on localhost:3306
     db = MySQLdb.connect(host="localhost", port=3306,
                          user=username, passwd=password, db=db_name)
 
     cur = db.cursor()
-    # Execute query: sorted ascending by states.id
+    # Query states sorted by id ascending
     cur.execute("SELECT * FROM states ORDER BY id ASC")
 
-    # Fetch and display results
-    rows = cur.fetchall()
-    for row in rows:
+    # Print results exactly as tuples
+    for row in cur.fetchall():
         print(row)
 
-    # Clean up
+    # Close cursor and connection
     cur.close()
     db.close()
