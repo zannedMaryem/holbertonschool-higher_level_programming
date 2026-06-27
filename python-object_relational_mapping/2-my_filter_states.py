@@ -1,24 +1,27 @@
 #!/usr/bin/python3
-"""Displays all states matching the given name argument"""
+"""
+Lists all states where name matches the argument from the database hbtn_0e_0_usa
+"""
+
 import MySQLdb
 import sys
 
-
 if __name__ == "__main__":
-    db = MySQLdb.connect(
-        host="localhost",
-        port=3306,
-        user=sys.argv[1],
-        passwd=sys.argv[2],
-        db=sys.argv[3]
-    )
+    username = sys.argv[1]
+    password = sys.argv[2]
+    db_name = sys.argv[3]
+    state_name = sys.argv[4]
+
+    db = MySQLdb.connect(host="localhost", port=3306,
+                         user=username, passwd=password, db=db_name)
+
     cur = db.cursor()
-    cur.execute(
-        "SELECT * FROM states WHERE name = '{}' ORDER BY id ASC".format(
-            sys.argv[4]
-        )
-    )
+    # Use format to insert the state_name argument
+    query = "SELECT * FROM states WHERE name = '{}' ORDER BY id ASC".format(state_name)
+    cur.execute(query)
+
     for row in cur.fetchall():
         print(row)
+
     cur.close()
     db.close()
