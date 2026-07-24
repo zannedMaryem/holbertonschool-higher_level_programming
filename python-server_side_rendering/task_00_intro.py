@@ -3,13 +3,17 @@ import os
 
 def generate_invitations(template, attendees):
     if not isinstance(template, str):
-        raise TypeError("template is not a string")
-    if not isinstance(attendees, dict) or not all(isinstance(item, dict) for item in attendees):
-        raise TypeError("attendees is not a list of dictionnairies")
+        print("Template is not a string")
+        return
+    if not isinstance(attendees, list) or not all(isinstance(item, dict) for item in attendees):
+        print("attendees is not a list of dictionnairies")
+        return
     if not template.strip():
-        raise ValueError("Template is empty, no output files generated")
+        print("Template is empty, no output files generated")
+        return
     if not attendees:
-        raise ValueError("No data provided, no output files generated")
+        print("No data provided, no output files generated")
+        return
     
     for idx, attendee in enumerate(attendees, start=1):
         # Fill placeholders, replacing missing values with "N/A"
